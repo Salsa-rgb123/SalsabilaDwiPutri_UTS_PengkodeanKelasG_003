@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f6f3">
+  <title>Entri Voucher Kas Keluar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['DM Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['Manrope', 'DM Sans', 'ui-sans-serif', 'sans-serif']
+          },
+          colors: {
+            ink: '#202924',
+            forest: '#245b45',
+            mint: '#e6f1e9',
+            canvas: '#f4f6f3',
+            line: '#e4e9e4'
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: light; }
+    body { background-color: #f4f6f3; }
+    input, select, textarea { outline: none; }
+    input:focus, select:focus, textarea:focus { border-color: #4b8a68; box-shadow: 0 0 0 3px rgba(75, 138, 104, .12); }
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+    input[type="number"] { -moz-appearance: textfield; }
+    .row-enter { animation: row-enter .22s ease-out both; }
+    @keyframes row-enter { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body class="min-h-screen font-sans text-ink antialiased">
+  <header class="border-b border-line bg-white">
+    <div class="mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-5 py-4 sm:px-8">
+      <a href="#" class="flex items-center gap-3" aria-label="Ruang Kas, beranda">
+        <span class="grid h-10 w-10 place-items-center rounded-xl bg-forest text-white">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7.5h16M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M15 14h5M7.5 12h3m-3 3h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </span>
+        <span>
+          <span class="block font-display text-[15px] font-extrabold tracking-[0]">Ruang Kas</span>
+          <span class="block text-[11px] font-medium text-slate-500">KEUANGAN · OPERASIONAL</span>
+        </span>
+      </a>
+      <div class="flex items-center gap-3">
+        <span class="hidden text-sm text-slate-500 sm:inline">PT Arunika Nusantara</span>
+        <span class="grid h-9 w-9 place-items-center rounded-full bg-[#e9eee8] text-xs font-bold text-forest" aria-label="Profil pengguna">RA</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-[1440px] px-5 pb-12 pt-7 sm:px-8 sm:pt-10">
+    <div class="mb-7 flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <nav class="mb-3 flex items-center gap-2 text-xs font-medium text-slate-500" aria-label="Breadcrumb">
+          <a href="#" class="hover:text-forest">Kas &amp; Bank</a>
+          <span aria-hidden="true">/</span>
+          <span class="text-slate-700">Voucher kas keluar</span>
+        </nav>
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-2">
+          <h1 class="font-display text-[26px] font-extrabold leading-tight tracking-[0] sm:text-[30px]">Entri Voucher Kas Keluar</h1>
+          <span class="rounded-full border border-[#dce8de] bg-white px-2.5 py-1 text-[11px] font-semibold text-forest">VOUCHER BARU</span>
+        </div>
+        <p class="mt-2 text-sm text-slate-500">Catat pengeluaran dan pastikan jurnal seimbang sebelum dikirim.</p>
+      </div>
+      <a href="#" class="inline-flex items-center gap-2 rounded-lg border border-line bg-white px-3.5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-[#b8c9bc] hover:text-forest">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18 9 12l6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Kembali
+      </a>
+    </div>
+
+    <form id="voucher-form" class="space-y-5" novalidate>
+      <section class="rounded-xl border border-line bg-white p-5 sm:p-6" aria-labelledby="detail-heading">
+        <div class="mb-5 flex items-center gap-3">
+          <span class="grid h-8 w-8 place-items-center rounded-lg bg-mint text-forest">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 4h8m-9 3h10a2 2 0 0 1 2 2v10H5V9a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 12h8m-8 3h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </span>
+          <div>
+            <h2 id="detail-heading" class="font-display text-base font-bold">Informasi voucher</h2>
+            <p class="mt-0.5 text-xs text-slate-500">Lengkapi data transaksi pengeluaran.</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 gap-x-5 gap-y-4 sm:grid-cols-2 xl:grid-cols-4">
+          <label class="block">
+            <span class="mb-1.5 block text-xs font-semibold text-slate-600">Nomor voucher <span class="text-rose-600">*</span></span>
+            <input id="voucher-number" name="voucher-number" required value="BKK-2026-001" class="h-10 w-full rounded-lg border border-line bg-[#fafbfa] px-3 text-sm font-medium text-slate-700" aria-label="Nomor voucher">
+          </label>
+          <label class="block">
+            <span class="mb-1.5 block text-xs font-semibold text-slate-600">Tanggal transaksi <span class="text-rose-600">*</span></span>
+            <input id="voucher-date" name="voucher-date" type="date" required class="h-10 w-full rounded-lg border border-line bg-white px-3 text-sm text-slate-700">
+          </label>
+          <label class="block">
+            <span class="mb-1.5 block text-xs font-semibold text-slate-600">Dibayarkan kepada <span class="text-rose-600">*</span></span>
+            <input id="payee" name="payee" required placeholder="Nama penerima" class="h-10 w-full rounded-lg border border-line bg-white px-3 text-sm text-slate-700 placeholder:text-slate-400">
+          </label>
+          <label class="block">
+            <span class="mb-1.5 block text-xs font-semibold text-slate-600">Akun kas / bank <span class="text-rose-600">*</span></span>
+            <select id="cash-account" name="cash-account" required class="h-10 w-full rounded-lg border border-line bg-white px-3 text-sm text-slate-700">
+              <option value="">Pilih akun kas</option>
+              <option value="Bank BCA - 1102">Bank BCA - 1102</option>
+              <option value="Kas Besar - 1101">Kas Besar - 1101</option>
+              <option value="Bank Mandiri - 1103">Bank Mandiri - 1103</option>
+            </select>
+          </label>
+          <label class="block sm:col-span-2 xl:col-span-4">
+            <span class="mb-1.5 block text-xs font-semibold text-slate-600">Keterangan</span>
+            <input id="memo" name="memo" placeholder="Contoh: Pembayaran biaya operasional bulan Oktober" class="h-10 w-full rounded-lg border border-line bg-white px-3 text-sm text-slate-700 placeholder:text-slate-400">
+          </label>
+        </div>
+      </section>
+
+      <section class="overflow-hidden rounded-xl border border-line bg-white" aria-labelledby="journal-heading">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-line px-5 py-4 sm:px-6">
+          <div class="flex items-center gap-3">
+            <span class="grid h-8 w-8 place-items-center rounded-lg bg-[#f3eee3] text-[#8b6d2e]">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6.5h16M4 12h16M4 17.5h16M8 4v16m8-16v16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </span>
+            <div>
+              <h2 id="journal-heading" class="font-display text-base font-bold">Jurnal transaksi</h2>
+              <p class="mt-0.5 text-xs text-slate-500">Masukkan akun dan nominal pada sisi debit atau kredit.</p>
+            </div>
+          </div>
+          <button id="add-row" type="button" class="inline-flex items-center gap-2 rounded-lg border border-[#cbdccf] bg-white px-3 py-2 text-sm font-semibold text-forest transition hover:bg-mint focus:outline-none focus:ring-2 focus:ring-[#b9d1bf]">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            Tambah baris
+          </button>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full min-w-[790px] border-collapse text-left">
+            <thead>
+              <tr class="bg-[#f8faf8] text-[10px] font-bold uppercase tracking-[0.08em] text-slate-500">
+                <th class="w-12 px-5 py-3 text-center">No.</th>
+                <th class="min-w-[220px] px-3 py-3">Akun perkiraan</th>
+                <th class="min-w-[185px] px-3 py-3">Deskripsi</th>
+                <th class="min-w-[170px] px-3 py-3 text-right">Debit (Rp)</th>
+                <th class="min-w-[170px] px-3 py-3 text-right">Kredit (Rp)</th>
+                <th class="w-14 px-3 py-3" aria-label="Hapus baris"></th>
+              </tr>
+            </thead>
+            <tbody id="journal-rows" class="divide-y divide-[#edf0ed]"></tbody>
+            <tfoot>
+              <tr class="border-t border-line bg-[#fafbfa]">
+                <td colspan="3" class="px-5 py-4 text-right text-xs font-bold uppercase tracking-[0.06em] text-slate-500">Total jurnal</td>
+                <td class="px-3 py-4 text-right font-display text-sm font-extrabold tabular-nums text-ink" id="total-debit">Rp 0</td>
+                <td class="px-3 py-4 text-right font-display text-sm font-extrabold tabular-nums text-ink" id="total-credit">Rp 0</td>
+                <td></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <div class="grid gap-px border-t border-line bg-line sm:grid-cols-3">
+          <div class="bg-white px-5 py-4 sm:px-6">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.07em] text-slate-500">Total debit</p>
+            <p id="summary-debit" class="mt-1 font-display text-lg font-extrabold tabular-nums">Rp 0</p>
+          </div>
+          <div class="bg-white px-5 py-4 sm:px-6">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.07em] text-slate-500">Total kredit</p>
+            <p id="summary-credit" class="mt-1 font-display text-lg font-extrabold tabular-nums">Rp 0</p>
+          </div>
+          <div id="balance-panel" class="flex items-center gap-3 bg-[#f0f7f1] px-5 py-4 sm:px-6" aria-live="polite">
+            <span id="balance-icon" class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#dceee0] text-forest">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4.2 4L19 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div>
+              <p id="balance-status" class="text-sm font-bold text-forest">Jurnal seimbang</p>
+              <p id="balance-detail" class="mt-0.5 text-xs text-[#54705c]">Selisih Rp 0</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="flex flex-col-reverse items-stretch justify-between gap-3 sm:flex-row sm:items-center">
+        <p class="text-xs text-slate-500"><span class="text-rose-600">*</span> Wajib diisi. Nilai debit harus sama dengan kredit.</p>
+        <div class="flex flex-col-reverse gap-3 sm:flex-row">
+          <button type="button" id="reset-form" class="rounded-lg border border-line bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-[#f8faf8]">Batal</button>
+          <button id="submit-button" type="submit" disabled class="inline-flex items-center justify-center gap-2 rounded-lg bg-forest px-5 py-2.5 text-sm font-bold text-white shadow-sm transition enabled:hover:bg-[#194a36] enabled:active:translate-y-px disabled:cursor-not-allowed disabled:bg-[#b8c6bc] disabled:text-white/90 disabled:shadow-none">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Submit voucher
+          </button>
+        </div>
+      </div>
+    </form>
+    <div id="toast" role="status" aria-live="polite" class="pointer-events-none fixed bottom-5 right-5 z-10 translate-y-2 rounded-lg bg-[#202924] px-4 py-3 text-sm font-medium text-white opacity-0 shadow-lg transition duration-200"></div>
+  </main>
+
+  <template id="journal-row-template">
+    <tr class="journal-row row-enter">
+      <td class="row-number px-5 py-3 text-center text-xs font-semibold text-slate-400"></td>
+      <td class="px-3 py-2.5">
+        <select class="account-input h-9 w-full rounded-md border border-line bg-white px-2.5 text-xs text-slate-700" aria-label="Akun perkiraan" required>
+          <option value="">Pilih akun</option>
+          <option value="Beban operasional">Beban operasional</option>
+          <option value="Beban gaji">Beban gaji</option>
+          <option value="Beban perlengkapan">Beban perlengkapan</option>
+          <option value="Beban perjalanan dinas">Beban perjalanan dinas</option>
+          <option value="Utang usaha">Utang usaha</option>
+          <option value="Kas / Bank">Kas / Bank</option>
+          <option value="Pajak dibayar di muka">Pajak dibayar di muka</option>
+          <option value="Lain-lain">Lain-lain</option>
+        </select>
+      </td>
+      <td class="px-3 py-2.5"><input class="description-input h-9 w-full rounded-md border border-line bg-white px-2.5 text-xs text-slate-700 placeholder:text-slate-400" placeholder="Deskripsi baris" aria-label="Deskripsi baris"></td>
+      <td class="px-3 py-2.5"><input class="debit-input h-9 w-full rounded-md border border-line bg-white px-2.5 text-right text-xs tabular-nums text-slate-700 placeholder:text-slate-400" type="number" min="0" step="1" inputmode="numeric" placeholder="0" aria-label="Debit dalam rupiah"></td>
+      <td class="px-3 py-2.5"><input class="credit-input h-9 w-full rounded-md border border-line bg-white px-2.5 text-right text-xs tabular-nums text-slate-700 placeholder:text-slate-400" type="number" min="0" step="1" inputmode="numeric" placeholder="0" aria-label="Kredit dalam rupiah"></td>
+      <td class="px-3 py-2.5 text-center"><button type="button" class="remove-row inline-grid h-8 w-8 place-items-center rounded-md text-slate-400 transition hover:bg-rose-50 hover:text-rose-600 disabled:cursor-not-allowed disabled:opacity-30" aria-label="Hapus baris jurnal" title="Hapus baris">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16m-10 4v6m4-6v6M6 7l1 13h10l1-13M9 7V4h6v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button></td>
+    </tr>
+  </template>
+
+  <script>
+    const rowsElement = document.getElementById('journal-rows');
+    const rowTemplate = document.getElementById('journal-row-template');
+    const submitButton = document.getElementById('submit-button');
+    const form = document.getElementById('voucher-form');
+    const rupiah = new Intl.NumberFormat('id-ID', { maximumFractionDigits: 0 });
+
+    function formatRupiah(amount) {
+      return `Rp ${rupiah.format(amount)}`;
+    }
+
+    function addRow(values = {}) {
+      const row = rowTemplate.content.firstElementChild.cloneNode(true);
+      row.querySelector('.account-input').value = values.account || '';
+      row.querySelector('.description-input').value = values.description || '';
+      row.querySelector('.debit-input').value = values.debit ?? '';
+      row.querySelector('.credit-input').value = values.credit ?? '';
+      rowsElement.append(row);
+      updateJournal();
+    }
+
+    function updateJournal() {
+      const rows = [...rowsElement.querySelectorAll('.journal-row')];
+      let debitTotal = 0;
+      let creditTotal = 0;
+      let validAmounts = true;
+
+      rows.forEach((row, index) => {
+        row.querySelector('.row-number').textContent = String(index + 1).padStart(2, '0');
+        const debitInput = row.querySelector('.debit-input');
+        const creditInput = row.querySelector('.credit-input');
+        const debit = debitInput.value === '' ? 0 : Number(debitInput.value);
+        const credit = creditInput.value === '' ? 0 : Number(creditInput.value);
+        const debitValid = Number.isSafeInteger(debit) && debit >= 0;
+        const creditValid = Number.isSafeInteger(credit) && credit >= 0;
+        debitTotal += Number.isFinite(debit) ? debit : 0;
+        creditTotal += Number.isFinite(credit) ? credit : 0;
+        validAmounts = validAmounts && debitValid && creditValid;
+        row.querySelector('.remove-row').disabled = rows.length === 1;
+        debitInput.setCustomValidity(debitValid ? '' : 'Nominal harus berupa rupiah bulat dan tidak boleh negatif.');
+        creditInput.setCustomValidity(creditValid ? '' : 'Nominal harus berupa rupiah bulat dan tidak boleh negatif.');
+      });
+
+      const isBalanced = debitTotal === creditTotal;
+      const hasJournalLine = rows.some(row => row.querySelector('.account-input').value && (
+        Number(row.querySelector('.debit-input').value) > 0 || Number(row.querySelector('.credit-input').value) > 0
+      ));
+      document.getElementById('total-debit').textContent = formatRupiah(debitTotal);
+      document.getElementById('total-credit').textContent = formatRupiah(creditTotal);
+      document.getElementById('summary-debit').textContent = formatRupiah(debitTotal);
+      document.getElementById('summary-credit').textContent = formatRupiah(creditTotal);
+      document.getElementById('balance-status').textContent = isBalanced ? 'Jurnal seimbang' : 'Jurnal belum seimbang';
+      document.getElementById('balance-detail').textContent = isBalanced
+        ? `Selisih ${formatRupiah(0)}`
+        : `Selisih ${formatRupiah(Math.abs(debitTotal - creditTotal))} · ${debitTotal > creditTotal ? 'debit lebih besar' : 'kredit lebih besar'}`;
+      document.getElementById('balance-panel').className = `flex items-center gap-3 px-5 py-4 sm:px-6 ${isBalanced ? 'bg-[#f0f7f1]' : 'bg-[#fff5ed]'}`;
+      document.getElementById('balance-icon').className = `grid h-8 w-8 shrink-0 place-items-center rounded-full ${isBalanced ? 'bg-[#dceee0] text-forest' : 'bg-[#ffead9] text-[#a45025]'}`;
+      document.getElementById('balance-status').className = `text-sm font-bold ${isBalanced ? 'text-forest' : 'text-[#9b4d25]'}`;
+      document.getElementById('balance-detail').className = `mt-0.5 text-xs ${isBalanced ? 'text-[#54705c]' : 'text-[#a66b4e]'}`;
+      document.getElementById('balance-icon').innerHTML = isBalanced
+        ? '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4.2 4L19 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+        : '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 8v4m0 4h.01M10.3 3.9 2.7 17a2 2 0 0 0 1.7 3h15.2a2 2 0 0 0 1.7-3l-7.6-13.1a2 2 0 0 0-3.4 0Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+      const requiredFieldsValid = ['voucher-number', 'voucher-date', 'payee', 'cash-account']
+        .every(id => document.getElementById(id).value.trim());
+      const validLineDetails = rows.every(row => {
+        const debit = Number(row.querySelector('.debit-input').value) || 0;
+        const credit = Number(row.querySelector('.credit-input').value) || 0;
+        return debit === 0 && credit === 0 || Boolean(row.querySelector('.account-input').value) && !(debit > 0 && credit > 0);
+      });
+      submitButton.disabled = !(isBalanced && hasJournalLine && requiredFieldsValid && validLineDetails && validAmounts);
+    }
+
+    rowsElement.addEventListener('input', updateJournal);
+    rowsElement.addEventListener('change', updateJournal);
+    rowsElement.addEventListener('click', event => {
+      const removeButton = event.target.closest('.remove-row');
+      if (removeButton && rowsElement.querySelectorAll('.journal-row').length > 1) {
+        removeButton.closest('.journal-row').remove();
+        updateJournal();
+      }
+    });
+    document.getElementById('add-row').addEventListener('click', () => addRow());
+    form.addEventListener('input', updateJournal);
+    form.addEventListener('change', updateJournal);
+    document.getElementById('reset-form').addEventListener('click', () => {
+      form.reset();
+      rowsElement.replaceChildren();
+      addRow();
+      addRow();
+      updateJournal();
+    });
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      if (submitButton.disabled) return;
+      const toast = document.getElementById('toast');
+      toast.textContent = 'Voucher berhasil disiapkan untuk dikirim.';
+      toast.classList.remove('translate-y-2', 'opacity-0');
+      window.setTimeout(() => toast.classList.add('translate-y-2', 'opacity-0'), 2800);
+    });
+
+    const today = new Date();
+    document.getElementById('voucher-date').value = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+    addRow({ account: 'Beban operasional', description: 'Biaya operasional', debit: 2500000 });
+    addRow({ account: 'Kas / Bank', description: 'Pembayaran melalui bank', credit: 2500000 });
+    document.getElementById('payee').value = 'PT Mitra Sejahtera';
+    document.getElementById('cash-account').value = 'Bank BCA - 1102';
+    updateJournal();
+  </script>
+</body>
+</html>
