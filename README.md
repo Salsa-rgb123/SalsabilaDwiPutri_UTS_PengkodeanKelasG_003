@@ -84,8 +84,8 @@ API pada `server.js` merupakan contoh/demo: data transaksi disimpan di memori da
 
 ## Informasi Tambahan
 
-- **Nama:** [Isi nama]
-- **NIM:** [Isi NIM]
-- **Mata kuliah:** [Isi nama mata kuliah]
-- **Dosen pengampu:** [Isi nama dosen]
-- **Semester/tahun akademik:** [Isi semester dan tahun akademik]
+- **Nama:** Salsabila Dwi Putri
+- **NIM:** 12030124120003
+- **Mata kuliah:** Pengkodean dan Pemograman
+- **Dosen pengampu:** Dr. Totok Dewayanto, S.E., M.Si., Akt.
+- **Semester/tahun akademik:** 5/ 2026
